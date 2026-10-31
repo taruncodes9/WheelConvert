@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WheelConvert — Radial File Converter for Windows 10 & 11</title>
+    <meta name="description" content="Convert, crop, compress, and inspect files instantly from Windows Explorer using a sleek radial pie menu.">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            orange: '#FF7A3D',
+                            hover: '#FF925C',
+                            dark: '#11111B',
+                            card: '#1E1E2E',
+                            border: '#313244',
+                            text: '#CDD6F4',
+                            subtext: '#A6ADC8'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .radial-glow {
+            box-shadow: 0 0 50px -10px rgba(255, 122, 61, 0.3);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #FF7A3D 0%, #FFB86C 50%, #FF3B30 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-[#11111B] text-[#CDD6F4] font-sans antialiased selection:bg-[#FF7A3D] selection:text-white">
+
+    <!-- Top Navigation -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-[#11111B]/80 border-b border-[#313244]">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-9 h-9 rounded-full bg-[#FF7A3D] flex items-center justify-center font-bold text-white text-lg shadow-md shadow-[#FF7A3D]/30">
+                    ⚙
+                </div>
+                <span class="text-xl font-bold tracking-tight text-white">WheelConvert</span>
+            </div>
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-[#A6ADC8]">
+                <a href="#features" class="hover:text-white transition">Features</a>
+                <a href="#how-it-works" class="hover:text-white transition">How it Works</a>
+                <a href="#downloads" class="hover:text-white transition">Downloads</a>
+                <a href="#portfolio" class="hover:text-[#FF7A3D] transition">More Apps</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <a href="#downloads" class="px-4 py-2 rounded-lg bg-[#FF7A3D] hover:bg-[#FF925C] text-white text-sm font-semibold transition shadow-md shadow-[#FF7A3D]/25">
+                    Download Free
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-20 pb-24 overflow-hidden">
+        <!-- Glow gradient background -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-[#FF7A3D]/15 blur-[120px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
+            <div class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-[#1E1E2E] border border-[#313244] text-xs font-semibold text-[#FFB86C] mb-6">
+                <span>⚡ New: Support for Windows 10 & 11 (64-bit & 32-bit)</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+                Convert files instantly with a <span class="gradient-text">Radial Pie Menu</span>
+            </h1>
+
+            <p class="text-lg sm:text-xl text-[#A6ADC8] max-w-2xl mx-auto mb-10 leading-relaxed">
+                Select any file in Windows Explorer, press <kbd class="px-2.5 py-1 bg-[#1E1E2E] border border-[#45475A] rounded-md text-white font-mono text-sm shadow">Ctrl + Shift + Space</kbd>, and convert, crop, or compress without leaving your workflow.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+                <a href="#downloads" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-[#FF7A3D] hover:bg-[#FF925C] text-white font-bold text-base transition shadow-lg shadow-[#FF7A3D]/30 flex items-center justify-center space-x-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                    <span>Download Installer (.exe)</span>
+                </a>
+                <a href="#how-it-works" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-[#1E1E2E] hover:bg-[#252538] border border-[#313244] text-white font-medium text-base transition flex items-center justify-center space-x-2">
+                    <span>See How It Works</span>
+                    <span>→</span>
+                </a>
+            </div>
+
+            <!-- Radial Mockup Illustration -->
+            <div class="relative max-w-lg mx-auto bg-[#1E1E2E] p-8 rounded-2xl border border-[#313244] radial-glow">
+                <div class="text-xs text-[#A6ADC8] uppercase tracking-wider font-bold mb-4">Interactive Radial HUD at your cursor</div>
+                <div class="relative w-64 h-64 mx-auto rounded-full border-2 border-dashed border-[#FF7A3D]/40 flex items-center justify-center bg-[#181825]/80 backdrop-blur">
+                    <div class="w-20 h-20 rounded-full bg-[#11111B] border-2 border-[#FF7A3D] flex flex-col items-center justify-center shadow-lg">
+                        <span class="text-xs font-bold text-[#FFB86C]">IMAGE</span>
+                        <span class="text-[10px] text-[#A6ADC8]">Ready</span>
+                    </div>
+
+                    <!-- Orbiting Action Badges -->
+                    <div class="absolute -top-3 px-3 py-1 bg-[#FF7A3D] text-white text-xs font-bold rounded-full shadow">CONVERT</div>
+                    <div class="absolute -bottom-3 px-3 py-1 bg-[#313244] text-[#CDD6F4] text-xs font-bold rounded-full border border-[#45475A]">COMPRESS</div>
+                    <div class="absolute -left-3 px-3 py-1 bg-[#313244] text-[#CDD6F4] text-xs font-bold rounded-full border border-[#45475A]">CROP</div>
+                    <div class="absolute -right-3 px-3 py-1 bg-[#313244] text-[#CDD6F4] text-xs font-bold rounded-full border border-[#45475A]">METADATA</div>
+                </div>
+                <div class="mt-6 text-xs text-[#A6ADC8]">Never steals focus • Multi-monitor & DPI aware • 100% Offline</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 border-t border-[#313244] bg-[#14141F]">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">How It Works in 3 Steps</h2>
+                <p class="text-[#A6ADC8] text-base">Effortless file manipulation with zero context switching.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-[#1E1E2E] p-6 rounded-xl border border-[#313244]">
+                    <div class="w-10 h-10 rounded-lg bg-[#FF7A3D]/20 text-[#FF7A3D] flex items-center justify-center font-bold text-lg mb-4">1</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Select Your File(s)</h3>
+                    <p class="text-[#A6ADC8] text-sm leading-relaxed">Click any image, PDF, or Word document inside Windows File Explorer. Works with single or multiple selections.</p>
+                </div>
+
+                <div class="bg-[#1E1E2E] p-6 rounded-xl border border-[#313244]">
+                    <div class="w-10 h-10 rounded-lg bg-[#FF7A3D]/20 text-[#FF7A3D] flex items-center justify-center font-bold text-lg mb-4">2</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Press the Hotkey</h3>
+                    <p class="text-[#A6ADC8] text-sm leading-relaxed">Press <code class="text-[#FFB86C] bg-[#11111B] px-1.5 py-0.5 rounded border border-[#313244]">Ctrl+Shift+Space</code>. The radial pie menu instantly appears centred exactly where your mouse is.</p>
+                </div>
+
+                <div class="bg-[#1E1E2E] p-6 rounded-xl border border-[#313244]">
+                    <div class="w-10 h-10 rounded-lg bg-[#FF7A3D]/20 text-[#FF7A3D] flex items-center justify-center font-bold text-lg mb-4">3</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Pick &amp; Done</h3>
+                    <p class="text-[#A6ADC8] text-sm leading-relaxed">Hover to choose format (PNG, JPG, PDF, DOCX, TXT), crop, or compress. Converted files are saved right next to your original file.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 border-t border-[#313244]">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Built for Speed and Simplicity</h2>
+                <p class="text-[#A6ADC8] text-base">No bloated software, no web uploads, completely private.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-[#1E1E2E] p-6 rounded-xl border border-[#313244]">
+                    <div class="text-2xl mb-3">🔄</div>
+                    <h3 class="text-base font-bold text-white mb-2">Multi-Format Conversion</h3>
+                    <p class="text-xs text-[#A6ADC8] leading-relaxed">Images (JPG, PNG, WEBP, BMP, AVIF, HEIC) ⇄ PDF ⇄ Word DOCX ⇄ Plain Text.</p>
+                </div>
+
+                <div class="bg-[#1E1E2E] p-6 rounded-xl border border-[#313244]">
+                    <div class="text-2xl mb-3">✂️</div>
+                    <h3 class="text-base font-bold text-white mb-2">Interactive Cropper</h3>
+                    <p class="text-xs text-[#A6ADC8] leading-relaxed">Drag a crop box over any image preview with live pixel resolution readout and instant export.</p>
+                </div>
+
+                <div class="bg-[#1E1E2E] p-6 rounded-xl border border-[#313244]">
+                    <div class="text-2xl mb-3">🗜️</div>
+                    <h3 class="text-base font-bold text-white mb-2">Image Compressor</h3>
+                    <p class="text-xs text-[#A6ADC8] leading-relaxed">Reduce file sizes while preserving sharp visual quality using SkiaSharp re-encoding.</p>
+                </div>
+
+                <div class="bg-[#1E1E2E] p-6 rounded-xl border border-[#313244]">
+                    <div class="text-2xl mb-3">ℹ️</div>
+                    <h3 class="text-base font-bold text-white mb-2">EXIF Metadata Viewer</h3>
+                    <p class="text-xs text-[#A6ADC8] leading-relaxed">Inspect camera models, capture dates, dimensions, and hidden metadata in a clean DataGrid.</p>
+                </div>
+
+                <div class="bg-[#1E1E2E] p-6 rounded-xl border border-[#313244]">
+                    <div class="text-2xl mb-3">🔒</div>
+                    <h3 class="text-base font-bold text-white mb-2">100% Offline &amp; Private</h3>
+                    <p class="text-xs text-[#A6ADC8] leading-relaxed">Your files never leave your PC. Zero internet access required, no tracking, and no cloud uploads.</p>
+                </div>
+
+                <div class="bg-[#1E1E2E] p-6 rounded-xl border border-[#313244]">
+                    <div class="text-2xl mb-3">⚙️</div>
+                    <h3 class="text-base font-bold text-white mb-2">Customizable Settings</h3>
+                    <p class="text-xs text-[#A6ADC8] leading-relaxed">Change shortcuts, customize wheel diameter and color themes, configure output directories, and toggle startup.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Downloads Section -->
+    <section id="downloads" class="py-20 border-t border-[#313244] bg-[#14141F]">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Download WheelConvert</h2>
+            <p class="text-[#A6ADC8] text-base mb-12">Free and open source. Compatible with Windows 10 (1809+) and Windows 11.</p>
+
+            <div class="grid md:grid-cols-2 gap-6 text-left">
+                <!-- Installer Card -->
+                <div class="bg-[#1E1E2E] p-8 rounded-2xl border-2 border-[#FF7A3D] relative shadow-xl">
+                    <div class="absolute -top-3.5 right-6 px-3 py-1 bg-[#FF7A3D] text-white text-xs font-bold rounded-full">
+                        RECOMMENDED
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Universal Setup Installer</h3>
+                    <p class="text-[#A6ADC8] text-sm mb-6">Automatically detects if your laptop is 64-bit or 32-bit and installs the matching optimized binary. Creates shortcuts and auto-start.</p>
+                    <a href="https://github.com/your-username/WheelConvert/releases/latest" class="block w-full text-center py-3 rounded-xl bg-[#FF7A3D] hover:bg-[#FF925C] text-white font-bold text-sm transition shadow-md shadow-[#FF7A3D]/25">
+                        Download WheelConvert-Setup.exe (~100 MB)
+                    </a>
+                </div>
+
+                <!-- Portable Card -->
+                <div class="bg-[#1E1E2E] p-8 rounded-2xl border border-[#313244]">
+                    <h3 class="text-xl font-bold text-white mb-2">Standalone Portable Executable</h3>
+                    <p class="text-[#A6ADC8] text-sm mb-6">Single `.exe` with zero installation required. Carry it on a USB flash drive or run anywhere.</p>
+                    <div class="space-y-3">
+                        <a href="https://github.com/your-username/WheelConvert/releases/latest" class="block w-full text-center py-2.5 rounded-xl bg-[#313244] hover:bg-[#45475A] text-white font-medium text-xs transition border border-[#45475A]">
+                            Download 64-Bit Portable (.exe)
+                        </a>
+                        <a href="https://github.com/your-username/WheelConvert/releases/latest" class="block w-full text-center py-2.5 rounded-xl bg-[#313244] hover:bg-[#45475A] text-white font-medium text-xs transition border border-[#45475A]">
+                            Download 32-Bit Portable (.exe)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Developer Portfolio / More Apps Showcase Section -->
+    <section id="portfolio" class="py-20 border-t border-[#313244]">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-xs uppercase font-bold text-[#FFB86C] tracking-wider">Software Showcase</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2 mb-4">My Software Projects</h2>
+                <p class="text-[#A6ADC8] text-base max-w-xl mx-auto">Explore all desktop applications, utilities, and developer tools created by me.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- App 1: WheelConvert -->
+                <div class="bg-[#1E1E2E] rounded-xl border border-[#FF7A3D]/50 p-6 flex flex-col justify-between hover:border-[#FF7A3D] transition group">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-2.5 py-1 rounded bg-[#FF7A3D]/20 text-[#FF7A3D] text-xs font-bold">Featured Tool</span>
+                            <span class="text-xs text-[#A6ADC8]">Windows</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white group-hover:text-[#FF7A3D] transition mb-2">WheelConvert</h3>
+                        <p class="text-xs text-[#A6ADC8] leading-relaxed mb-4">Radial pie menu file converter and editor for Windows 10 &amp; 11 with PDF, DOCX, and image support.</p>
+                    </div>
+                    <div class="pt-4 border-t border-[#313244] flex items-center justify-between text-xs">
+                        <span class="text-[#FFB86C]">v1.0.0 • Free &amp; Open Source</span>
+                        <a href="#downloads" class="text-white font-semibold hover:underline">Get App →</a>
+                    </div>
+                </div>
+
+                <!-- App 2 Placeholder -->
+                <div class="bg-[#1E1E2E] rounded-xl border border-[#313244] p-6 flex flex-col justify-between hover:border-[#45475A] transition group">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-2.5 py-1 rounded bg-[#313244] text-[#A6ADC8] text-xs font-medium">Utility</span>
+                            <span class="text-xs text-[#A6ADC8]">Desktop</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white group-hover:text-[#FFB86C] transition mb-2">Your App #2</h3>
+                        <p class="text-xs text-[#A6ADC8] leading-relaxed mb-4">Add your second project, productivity app, or automation tool here with description and screenshots.</p>
+                    </div>
+                    <div class="pt-4 border-t border-[#313244] flex items-center justify-between text-xs">
+                        <span class="text-[#A6ADC8]">Coming Soon / Live</span>
+                        <a href="#" class="text-[#FFB86C] font-semibold hover:underline">Learn More →</a>
+                    </div>
+                </div>
+
+                <!-- App 3 Placeholder -->
+                <div class="bg-[#1E1E2E] rounded-xl border border-[#313244] p-6 flex flex-col justify-between hover:border-[#45475A] transition group">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-2.5 py-1 rounded bg-[#313244] text-[#A6ADC8] text-xs font-medium">Tool</span>
+                            <span class="text-xs text-[#A6ADC8]">Web / Desktop</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white group-hover:text-[#FFB86C] transition mb-2">Your App #3</h3>
+                        <p class="text-xs text-[#A6ADC8] leading-relaxed mb-4">Showcase another software or application you built with link to download or GitHub repo.</p>
+                    </div>
+                    <div class="pt-4 border-t border-[#313244] flex items-center justify-between text-xs">
+                        <span class="text-[#A6ADC8]">Coming Soon / Live</span>
+                        <a href="#" class="text-[#FFB86C] font-semibold hover:underline">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-[#313244] py-10 bg-[#0C0C14] text-xs text-[#A6ADC8]">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center space-x-2">
+                <span class="font-bold text-white">WheelConvert</span>
+                <span>• Released under the MIT License</span>
+            </div>
+            <div class="flex items-center space-x-6">
+                <a href="https://github.com/your-username/WheelConvert" class="hover:text-white transition">GitHub Repository</a>
+                <a href="#how-it-works" class="hover:text-white transition">Documentation</a>
+                <a href="#portfolio" class="hover:text-white transition">All Projects</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
