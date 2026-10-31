@@ -1,0 +1,7 @@
+<Application x:Class="WheelConvert.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             ShutdownMode="OnExplicitShutdown">
+    <!-- No StartupUri: tray app, no main window. -->
+    <Application.Resources />
+</Application>
