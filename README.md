@@ -4,7 +4,9 @@ Radial (pie) menu file converter for Windows 10 1809+ / Windows 11.
 Select files in Explorer → press a hotkey → pick an action from a sleek radial wheel.  
 Free/OSS libraries only. No admin needed.
 
-![.NET 8](https://img.shields.io/badge/.NET-8.0-purple) ![Windows](https://img.shields.io/badge/OS-Windows%2010%2F11-blue) ![License](https://img.shields.io/badge/license-MIT-green)
+![.NET 8](https://img.shields.io/badge/.NET-8.0-purple) ![Windows](https://img.shields.io/badge/OS-Windows%2010%2F11-blue) ![License](https://img.shields.io/badge/license-MIT-green) [![Website](https://img.shields.io/badge/Website-Live%20Demo-orange)](https://taruncodes9.github.io/WheelConvert/)
+
+🌐 **Live Showcase & Download Page**: [https://taruncodes9.github.io/WheelConvert/](https://taruncodes9.github.io/WheelConvert/)
 
 ## Features
 
